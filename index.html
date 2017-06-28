@@ -1,0 +1,28 @@
+<!--
+    1-  Exibir os clientes que estão no controller dentro da lista.
+    2-  Ao clicar em um dos clientes, fazer com que ele fique selecionado.
+    3-  Ao clicar em um cliente selecionado, remover a seleção.
+    4-  Exibir um contador com o número de clientes selecionados.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Clientes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body ng-app="clientes" ng-controller="ListaController">
+  <ion-item class="conta">{{selecionados}}</ion-item>
+    <section>
+        <div ng-repeat="cliente in clientes" ng-class="{'selecionado': cliente.status}" ng-click="seleciona(cliente)">
+            <img ng-src="{{cliente.avatar}}">
+            <p>{{cliente.nome}}</p>
+        </div>
+    </section>
+
+    <script src="../comum/angular.min.js"></script>
+      <script src="app.js"></script>
+</body>
+</html>
